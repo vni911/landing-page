@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-['Outfit'] antialiased text-zinc-800 bg-[#fafafa];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-rose-500 text-white font-bold rounded-full transition-all duration-300 hover:bg-rose-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-rose-200 active:scale-95;
+  }
+  
+  .nav-link {
+    @apply font-semibold text-zinc-600 hover:text-rose-500 transition-colors duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
